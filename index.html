@@ -1,37 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
+    
+    <main class="gameContainer">
+        
+        <div class="modalStatus hide">
+            <div class="chartsContainer">
+                <div class="chartWin chart"></div>
+                <div class="chartLose chart"></div>
+                <div class="chartDraw chart"></div>
+            </div>
+        </div>
 
+        <div class="modalRules hide">
+            <h2>RULES</h2>
+            <img src="/image-rules.svg" alt="">
+        </div>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+        <div class="optionsBtns">
+            <button class="statsBtn" onclick="showStats()">
+                STATUS
+            </button>
+    
+            <button class="rulesBtn" onclick="toggleRulesModal()">
+                RULES
+            </button>
+        </div>
+
+        <div class="mainMenu">
+            <img src="/logo.svg">
+            
+            <button class="newGameBtn" onclick="newGame()">
+                NEW GAME
+            </button>
+        </div>
+
+        <div class="scoreArea hide">
+
+            <div class="logo">
+                <h1>ROCK</h1>
+                <h1>PAPER</h1>
+                <h1>SCISSORS</h1>
+            </div>
+
+            <div class="score">
+                <p>SCORE</p>
+                <h1 class="counter">12</h1>
+            </div>
+        </div>
+
+        <div class="inputArea hide">
+
+            <button class="token Rock" value="Rock">
+                <div class="innerPart">
+                    <img src="/icon-rock.svg" alt="">
+                </div> 
+            </button>
+
+            <button class="token Paper" value="Paper">
+                <div class="innerPart">
+                    <img src="/icon-paper.svg" alt="">
+                </div> 
+            </button>
+
+            <button class="token Scissor" value="Scissor">
+                <div class="innerPart">
+                    <img src="/icon-scissor.svg" alt="">
+                </div> 
+            </button>
+            
+        </div>
+
+        <div class="battleArea hide">
+
+            <div class="youPick">
+                <h2>YOU PICKED</h2>
+                
+                <!-- //INJETAR PICK DO PLAYER -->
+
+            </div>
+
+            <div class="actions">
+                <h1 class="message">You Win</h1>
+                <button class="playAgain" onclick="newGame()">Play Again</button>
+            </div>
+
+            <div class="otherPick">
+                <h2>THE HOUSE PICKED</h2>
+                
+                <!-- // INJETAR PICK DA CASA -->
+
+            </div>
+        </div>
+    </main>
+
 </body>
 </html>
